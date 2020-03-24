@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "deployPrefix": {
+            "value": "-dev-"
+        },
+        "keyVaultName": {
+          "value": "nick-DB-vault-29357"
+        },
+        "uniqueSuffix": {
+            "value": "29357"
+        },
+        "adminPassword": {
+            "reference": {
+              "keyVault": {
+                "id": "/subscriptions/51bb8a43-c7c2-4af4-a427-132b9c60a3f5/resourceGroups/nick-DB-rg/providers/Microsoft.KeyVault/vaults/nick-DB-vault-29357"
+              },
+              "secretName": "adminPassword"
+            }
+        },
+        "firstRun": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/51bb8a43-c7c2-4af4-a427-132b9c60a3f5/resourceGroups/nick-DB-rg/providers/Microsoft.KeyVault/vaults/nick-DB-vault-29357"
+                },
+                "secretName": "firstRun"
+            }
+        }
+    }
+}
